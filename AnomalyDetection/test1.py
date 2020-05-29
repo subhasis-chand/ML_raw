@@ -12,7 +12,7 @@ sortedProb, prob = detectAnomaly(data)
 print("Sorted probabilities of data being anomalous. Check for a threshold value: \n", sortedProb)
 
 threshold = 0.028 #Selected from above print
-properData, anomalousData = separateAnomalyData(data, threshold)
+properData, anomalousData = separateAnomalyData(data, threshold, prob)
 
 ax[0].title.set_text("All the data points")
 ax[1].title.set_text("Anomaly in the data")

@@ -22,6 +22,6 @@ sortedProb, prob = detectAnomaly(ipData)
 print("Sorted probabilities of data being anomalous. Check for a threshold value: \n", sortedProb)
 
 threshold = 1.5e-06 #Selected from above print
-properData, anomalousData = separateAnomalyData(data, threshold)
+properData, anomalousData = separateAnomalyData(data, threshold, prob)
 
 
