@@ -33,7 +33,7 @@ def separateAnomalyData(data, th):
     return properData, anomalousData
 
 # data = np.genfromtxt('../resources/breastCancerData/dataMean.csv', delimiter=',', dtype='float')
-data = np.genfromtxt('../resources/serverData/tr_server_data.csv', delimiter=',', dtype='float')
+# data = np.genfromtxt('../resources/serverData/tr_server_data.csv', delimiter=',', dtype='float')
 # data = np.genfromtxt('/Users/subhasis/Downloads/breast-cancer-wisconsin.data', delimiter=',', dtype='float')
 # positiveData = data[data[:, 0] == 1]
 # negativeData = data[data[:, 0] == 0]
@@ -42,23 +42,23 @@ data = np.genfromtxt('../resources/serverData/tr_server_data.csv', delimiter=','
 
 # op = data[:, -1]
 
-data = data[1:, :]
+# data = data[1:, :]
 # data[:, 3] = np.log10(data[:, 3])
 # data[:, 6] = np.log10(data[:, 6])
 # data[:, 7] = np.log10(data[:, 7])
 # data = np.delete(data, 5, axis=1) # for breast-cancer-wisconsin.data
 
-meanSigArr = generateMeanSig(data)
-probList = np.zeros(data.shape[0])
-for i in range(data.shape[0]):
-    probList[i] = detectAnomalyProbability(data[i], meanSigArr)
-print(np.sort(probList))
+# meanSigArr = generateMeanSig(data)
+# probList = np.zeros(data.shape[0])
+# for i in range(data.shape[0]):
+#     probList[i] = detectAnomalyProbability(data[i], meanSigArr)
+# print(np.sort(probList))
 
-probList = np.array(probList)
-properData = data[probList > 2.8e-02]
-anomalousData = data[probList <= 2.8e-02]
-print("proper data: ", anomalousData, anomalousData.shape, data.shape)
-exit()
+# probList = np.array(probList)
+# properData = data[probList > 2.8e-02]
+# anomalousData = data[probList <= 2.8e-02]
+# print("proper data: ", anomalousData, anomalousData.shape, data.shape)
+# exit()
 
 # for j in range(data.shape[1]):
 #     d = data[:, j]
@@ -70,10 +70,10 @@ exit()
 #     plt.plot(x, y*histMax.max())
 #     plt.show()
 
-print(probList.min(), probList.max())
-histMax, binMax, _ = plt.hist(probList, bins=100)
+# print(probList.min(), probList.max())
+# histMax, binMax, _ = plt.hist(probList, bins=100)
 # plt.plot(np.sort(probList), '.')
-plt.show()
+# plt.show()
 
 # for breast-cancer-wisconsin.data
 # malignant, benign =[], []
@@ -86,7 +86,7 @@ plt.show()
 # plt.plot(malignant, 'r.')
 # plt.plot(benign, 'g.')
 # plt.show()
-exit()
+# exit()
 
 # col_1 = data[:, 3]
 
